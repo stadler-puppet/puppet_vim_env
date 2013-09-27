@@ -1,0 +1,6 @@
+execute pathogen#infect()
+syntax on
+filetype plugin indent on
+let g:syntastic_puppet_checkers=['puppetlint']
+set autoindent
+:set tabstop=2 softtabstop=2 shiftwidth=2 expandtab
