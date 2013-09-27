@@ -1,5 +1,5 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-let g:syntastic_puppet_checkers=['puppetlint']
+let g:syntastic_puppet_checkers=['puppet', 'puppetlint']
 
