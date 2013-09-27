@@ -8,6 +8,11 @@ class dev_env::bundle ( $homedir = '/root') {
     require => File[ "${homedir}/.vim" ],
   }
 
+  package { 'puppet-lint':
+    ensure      => 'installed',
+    provider    => gem,
+  }
+
   Vcsrepo {
     ensure   => present,
     provider => git,
