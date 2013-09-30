@@ -9,13 +9,26 @@ class dev_env::bundle ( $homedir = '/root') {
   }
 
   package { 'puppet-lint':
-    ensure      => 'installed',
-    provider    => gem,
+    ensure      => installed,
+    provider    => pe_gem,
+  }
+
+  file { '/usr/local/bin/puppet-lint':
+    ensure => link,
+    target => '/opt/puppet/bin/puppet-lint',
   }
 
   Vcsrepo {
     ensure   => present,
     provider => git,
+  }
+
+  vcsrepo { "${bundledir}/vim-addon-mw-utils":
+    source => 'https://github.com/MarcWeber/vim-addon-mw-utils.git',
+  }
+
+  vcsrepo { "${bundledir}/tlib_vim":
+    source => 'https://github.com/tomtom/tlib_vim.git',
   }
 
   vcsrepo { "${bundledir}/vim-snipmate":
@@ -30,16 +43,12 @@ class dev_env::bundle ( $homedir = '/root') {
     source => 'https://github.com/scrooloose/syntastic.git',
   }
 
-  vcsrepo { "${bundledir}/mv-vim-puppet":
-    source => 'https://github.com/mv/mv-vim-puppet.git',
+  vcsrepo { "${bundledir}/vim-puppet":
+    source => 'https://github.com/rodjek/vim-puppet.git',
   }
 
-  vcsrepo { "${bundledir}/vim-addon-mw-utils":
-    source => 'https://github.com/MarcWeber/vim-addon-mw-utils.git',
-  }
-
-  vcsrepo { "${bundledir}/tlib_vim":
-    source => 'https://github.com/tomtom/tlib_vim.git',
+  vcsrepo { "${bundledir}/vim-snippets":
+    source => 'https://github.com/honza/vim-snippets.git',
   }
 
 }
