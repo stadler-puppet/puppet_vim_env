@@ -14,6 +14,7 @@ class dev_env::pathogen (
   exec { "fetch ${pathogen_url}":
     path    => ['/bin', '/usr/bin', 'sbin', '/usr/sbin'],
     command => "curl -Sso ${autoloaddir}/pathogen.vim ${pathogen_url}",
+    creates => "${autoloaddir}/pathogen.vim",
     require => File[ $autoloaddir ],
   }
 

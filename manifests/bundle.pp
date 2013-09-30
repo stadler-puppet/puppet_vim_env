@@ -2,9 +2,14 @@
 class dev_env::bundle ( $homedir ) {
 
   $bundledir    = "${homedir}/.vim/bundle"
-  $gem_provider = $::is_pe ? {
-    'true'  => 'pe_gem',
-    default => 'gem',
+  
+  if $::is_pe == 'true' {
+    $gem_provider = 'pe_gem'
+    $lint_target  = '/opt/puppet/bin/puppet-lint'
+  }
+  else {
+    $gem_provider = 'gem',
+    $lint_target  = '/usr/bin/puppet-lint'
   }
 
   file { $bundledir:
@@ -19,7 +24,7 @@ class dev_env::bundle ( $homedir ) {
 
   file { '/usr/local/bin/puppet-lint':
     ensure => link,
-    target => '/opt/puppet/bin/puppet-lint',
+    target => $lint_target,
   }
 
   Vcsrepo {
