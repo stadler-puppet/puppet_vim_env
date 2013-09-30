@@ -4,7 +4,7 @@ require 'etc'
 
 Facter.add("homedir") do
   setcode do
-    login = Etc.getlogin
-    Etc.getpwnam(login).dir    
+    user = `whoami`
+    Etc.getpwnam(user).dir    
   end
 end
