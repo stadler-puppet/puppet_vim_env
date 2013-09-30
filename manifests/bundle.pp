@@ -1,5 +1,5 @@
 # bundle.pp
-class dev_env::bundle ( $homedir ) {
+class puppet_vim_env::bundle ( $homedir ) {
 
   $bundledir = "${homedir}/.vim/bundle"
   

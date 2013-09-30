@@ -1,5 +1,5 @@
 # pathogen.pp
-class dev_env::pathogen (
+class puppet_vim_env::pathogen (
   $homedir,
   $pathogen_url = 'https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim'
   ) {
