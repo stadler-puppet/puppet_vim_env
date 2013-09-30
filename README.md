@@ -2,6 +2,15 @@
 
 This module sets up a vim envrionment optimized for Puppet development.
 
+It relies on the work done by many, many people and specifically draws upon the following resources:
+*[https://github.com/MarcWeber/vim-addon-mw-utils]
+*[https://github.com/tomtom/tlib_vim]
+*[https://github.com/garbas/vim-snipmate]
+*[https://github.com/godlygeek/tabular]
+*[https://github.com/scrooloose/syntastic]
+*[https://github.com/rodjek/vim-puppet]
+*[https://github.com/honza/vim-snippets]
+
 ### Prerequisites
 
 This module relies on a couple of modules from http://forge.puppetlabs.com.
