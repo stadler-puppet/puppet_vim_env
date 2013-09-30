@@ -18,6 +18,8 @@ https://github.com/rodjek/vim-puppet
 
 https://github.com/honza/vim-snippets
 
+It uses a custom fact, `homedir`, to decide where to put the .vimrc file and .vim directory. Beware, this will clobber your existing .vimrc!
+
 ### Prerequisites
 
 This module relies on a couple of modules from http://forge.puppetlabs.com.
