@@ -7,14 +7,14 @@ This module sets up a vim envrionment optimized for Puppet development.
 This module relies on a couple of modules from http://forge.puppetlabs.com.
 
 * For PE:
-  - puppet module install puppetlabs/pe_gem
+  - `puppet module install puppetlabs/pe_gem`
 * For any Puppet install including PE:
-  - puppet module install puppetlabs/vcsrepo
+  - `puppet module install puppetlabs/vcsrepo`
 
-This module also assumes that your system has curl and rubygems installed (though it uses the vedored PE gem executable if available).
+This module also assumes that your system has `curl` and `rubygems` installed (though it uses the vedored PE gem executable if available).
 
 ### Installation & Setup
 
-To begin using this module, clone this repo into your modulepath and include puppet_vim_env.
+To begin using this module, clone this repo into your modulepath and `include puppet_vim_env`.
 
 
