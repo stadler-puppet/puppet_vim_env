@@ -4,6 +4,7 @@ require 'etc'
 
 Facter.add("homedir") do
   setcode do
-    Etc.getpwnam('postgres').dir    
+    login = Etc.getlogin
+    Etc.getpwnam(login).dir    
   end
 end
