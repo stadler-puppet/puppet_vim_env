@@ -1,7 +1,11 @@
 ##
-class dev_env::bundle ( $homedir = '/root') {
+class dev_env::bundle ( $homedir ) {
 
-  $bundledir = "${homedir}/.vim/bundle"
+  $bundledir    = "${homedir}/.vim/bundle"
+  $gem_provider = $::is_pe ? {
+    'true'  => 'pe_gem',
+    default => 'gem',
+  }
 
   file { $bundledir:
     ensure  => directory,
@@ -10,7 +14,7 @@ class dev_env::bundle ( $homedir = '/root') {
 
   package { 'puppet-lint':
     ensure      => installed,
-    provider    => pe_gem,
+    provider    => $gem_provider,
   }
 
   file { '/usr/local/bin/puppet-lint':
