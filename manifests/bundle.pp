@@ -1,14 +1,14 @@
-##
+# bundle.pp
 class dev_env::bundle ( $homedir ) {
 
-  $bundledir    = "${homedir}/.vim/bundle"
+  $bundledir = "${homedir}/.vim/bundle"
   
   if $::is_pe == 'true' {
     $gem_provider = 'pe_gem'
     $lint_target  = '/opt/puppet/bin/puppet-lint'
   }
   else {
-    $gem_provider = 'gem',
+    $gem_provider = 'gem'
     $lint_target  = '/usr/bin/puppet-lint'
   }
 

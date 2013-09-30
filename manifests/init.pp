@@ -1,3 +1,4 @@
+# init.pp
 class dev_env ( $homedir = $::homedir ) {
 
   file { "${homedir}/.vim":
