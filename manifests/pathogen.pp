@@ -20,7 +20,7 @@ class puppet_vim_env::pathogen (
 
   file { "${homedir}/.vimrc":
     ensure => file,
-    source => 'puppet:///modules/dev_env/vimrc',
+    source => 'puppet:///modules/puppet_vim_env/vimrc',
   }
 }
 
