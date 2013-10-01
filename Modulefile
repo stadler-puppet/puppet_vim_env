@@ -3,7 +3,7 @@ version '0.1.0'
 source 'https://github.com/jpadams/puppet_vim_env.git'
 author 'Jeremy Adams'
 license 'Apache License, Version 2.0'
-summary 'Puppet Vim Environment '
+summary 'Puppet Vim Environment'
 description 'Puppet Vim Environment setup for *NIX systems'
 project_page 'https://github.com/jpadams/puppet_vim_env'
 
