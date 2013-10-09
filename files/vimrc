@@ -2,4 +2,6 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 let g:syntastic_puppet_checkers=['puppet', 'puppetlint']
-
+set listchars=trail:.
+set list
+set ruler
