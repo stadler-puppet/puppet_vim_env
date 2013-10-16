@@ -5,3 +5,5 @@ let g:syntastic_puppet_checkers=['puppet', 'puppetlint']
 set listchars=trail:.
 set list
 set ruler
+
+new thing
