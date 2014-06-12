@@ -1,7 +1,6 @@
 # pathogen.pp
 class puppet_vim_env::pathogen (
-  $homedir,
-  $pathogen_url = 'https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim'
+  $homedir
   ) {
 
   $autoloaddir = "${homedir}/.vim/autoload"
@@ -10,12 +9,10 @@ class puppet_vim_env::pathogen (
     ensure  => directory,
     require => File[ "${homedir}/.vim" ],
   }
-
-  exec { "fetch ${pathogen_url}":
-    path    => ['/bin', '/usr/bin', 'sbin', '/usr/sbin'],
-    command => "curl -Sso ${autoloaddir}/pathogen.vim ${pathogen_url}",
-    creates => "${autoloaddir}/pathogen.vim",
-    require => File[ $autoloaddir ],
+  
+  file { "${autoloaddir}/pathogen.vim":
+    ensure => file,
+    source => 'puppet:///modules/puppet_vim_env/pathogen.vim',
   }
 
   file { "${homedir}/.vimrc":
