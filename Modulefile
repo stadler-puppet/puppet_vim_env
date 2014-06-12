@@ -9,5 +9,5 @@ project_page 'https://github.com/jpadams/puppet_vim_env'
 
 ## Add dependencies, if any:
 # dependency 'username/name', '>= 1.2.0'
-dependency 'puppetlabs/pe_gem'
-dependency 'puppetlabs/vcsrepo'
+dependency 'puppetlabs/pe_gem', '>= 0.0.1'
+dependency 'puppetlabs/vcsrepo', '>= 1.0.0'
