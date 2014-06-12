@@ -1,5 +1,5 @@
 name    'jpadams-puppet_vim_env'
-version '0.2.0'
+version '0.3.0'
 source 'https://github.com/jpadams/puppet_vim_env.git'
 author 'Jeremy Adams'
 license 'Apache License, Version 2.0'
