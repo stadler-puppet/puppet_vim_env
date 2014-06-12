@@ -29,7 +29,7 @@ class puppet_vim_env::bundle ( $homedir ) {
 
   Vcsrepo {
     ensure   => present,
-    provider => git,
+    provider => 'git',
   }
 
   vcsrepo { "${bundledir}/vim-addon-mw-utils":
